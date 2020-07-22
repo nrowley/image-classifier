@@ -27,7 +27,7 @@ namespace ImageRecognition
             if (imageUploaded == true)
             {
                 //begin processing
-                var configurationDetector = new ConfigurationDetector();
+                var configurationDetector = new YoloConfigurationDetector();
                 var config = configurationDetector.Detect();
                 using(var yoloWrapper = new YoloWrapper(config))
                 {
@@ -36,10 +36,7 @@ namespace ImageRecognition
                         imageBox.Image.Save(memStream, ImageFormat.Png);
                         var items = yoloWrapper.Detect(memStream.ToArray());
 
-                        foreach(var item in items)
-                        {
-                            Console.WriteLine(item.Type);
-                        }
+                        yoloItemBindingSource.DataSource = items;
 
                     }
                 }

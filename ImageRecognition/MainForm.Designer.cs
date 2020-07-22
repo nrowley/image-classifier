@@ -52,12 +52,14 @@
             this.fileUploadBtn.TabIndex = 1;
             this.fileUploadBtn.Text = "Upload";
             this.fileUploadBtn.UseVisualStyleBackColor = true;
+            this.fileUploadBtn.Click += new System.EventHandler(this.fileUploadBtn_Click);
             // 
             // imageBox
             // 
             this.imageBox.Location = new System.Drawing.Point(104, 12);
             this.imageBox.Name = "imageBox";
             this.imageBox.Size = new System.Drawing.Size(609, 392);
+            this.imageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.imageBox.TabIndex = 2;
             this.imageBox.TabStop = false;
             // 
